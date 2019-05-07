@@ -18,7 +18,7 @@ namespace Task2
         static void Main(string[] args)
         {
             Random random = new Random();
-            MonthsCollection months = new MonthsCollection(); 
+            MonthCollection months = new MonthCollection(); 
             for (uint i = 0; i < 120; i++)
             {
                 uint number = (uint)random.Next(1, 12);

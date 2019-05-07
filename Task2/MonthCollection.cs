@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 
 namespace Task2
 {
-    class MonthsCollection: ICollection<Month>
+    class MonthCollection: ICollection<Month>
     {
         const uint DEFAULT_MONTHS_QUANTITY = 12;
         Month[] _months;
 
-        public MonthsCollection()
+        public MonthCollection()
         {
             Clear();
         }
@@ -76,7 +76,10 @@ namespace Task2
 
         public void CopyTo(Month[] array, int arrayIndex)
         {
-            _months.CopyTo(array, arrayIndex);
+            for (int i = arrayIndex; i < Count; i++)
+            {
+                array[i - arrayIndex] = _months[i];
+            }
         }
 
         public bool Remove(Month item)
